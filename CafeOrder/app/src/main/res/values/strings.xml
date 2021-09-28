@@ -5,4 +5,8 @@
     <string name="hint_name">Введите ваше имя</string>
     <string name="hint_password">Введите ваш пароль</string>
     <string name="button_create_order">Создать заказ</string>
+
+    <string name="warning_fill_all_fields">Заполните все поля!</string>
+    <string name="warning_fill_name">Имя не заполнено!</string>
+    <string name="warning_fill_password">Пароль не заполнен!</string>
 </resources>
