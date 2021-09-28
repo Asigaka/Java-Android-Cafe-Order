@@ -34,6 +34,7 @@ public class CreateOrderActivity extends AppCompatActivity {
         name = intent.getStringExtra("name");
         password = intent.getStringExtra("password");
 
+        stringBuilder = new StringBuilder();
         textViewHello = findViewById(R.id.textViewHello);
         textViewAdditions = findViewById(R.id.textViewAdditions);
         checkBoxMilk = findViewById(R.id.checkBoxMilk);
@@ -44,6 +45,10 @@ public class CreateOrderActivity extends AppCompatActivity {
 
         String hello = String.format(getString(R.string.hello_user), name);
         textViewHello.setText(hello);
+
+        drink = getString(R.string.tea);
+        String additions = String.format(getString(R.string.additions), drink);
+        textViewAdditions.setText(additions);
     }
 
     public void onClickChangeDrink(View view) {
@@ -91,12 +96,16 @@ public class CreateOrderActivity extends AppCompatActivity {
         String additions;
 
         if (stringBuilder.length() > 0) {
-            additions = getString(R.string.need_additions) + stringBuilder.toString();
+            additions = "\n" + getString(R.string.need_additions) + stringBuilder.toString();
         }
         else {
             additions = "";
         }
 
         String fullOrder = order + additions;
+        Intent intent = new Intent(this, OrderDetailActivity.class);
+        intent.putExtra("order", fullOrder);
+
+        startActivity(intent);
     }
 }
