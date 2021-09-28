@@ -30,6 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <RadioButton
+            android:id="@+id/radioButtonTea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tea"
@@ -39,6 +40,7 @@
             android:layout_margin="8dp"/>
 
         <RadioButton
+            android:id="@+id/radioButtonCoffee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/coffee"
@@ -112,9 +114,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:entries="@array/options_of_tea"
-        app:layout_constraintTop_toBottomOf="@id/textViewChoseDrink"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/textViewChoseDrink" />
 
     <Spinner
         android:id="@+id/spinnerCoffee"
@@ -136,6 +138,7 @@
         android:text="@string/button_send_order"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:onClick="onClickSendOrder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
